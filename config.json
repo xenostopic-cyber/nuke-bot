@@ -1,0 +1,9 @@
+{
+  "1105561097752301608": {
+    "show_username": true,
+    "channel_name": "nuked-channel",
+    "webhook_name": "Nuke Webhook",
+    "webhook_message": "Server has been nuked!",
+    "server_name": "Nuked Server"
+  }
+}

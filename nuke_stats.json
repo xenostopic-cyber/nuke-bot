@@ -1,0 +1,76 @@
+{
+  "users": {
+    "1427299411049840640": {
+      "uses": 11
+    },
+    "1450613343273615513": {
+      "uses": 4
+    },
+    "1055574652413550632": {
+      "uses": 2
+    },
+    "1105561097752301608": {
+      "uses": 1
+    },
+    "1202811656229494805": {
+      "uses": 1
+    }
+  },
+  "servers": {
+    "1507495824786198538": {
+      "user_id": "1427299411049840640",
+      "member_count": 3,
+      "server_name": "Nuked by Cyber"
+    },
+    "1494057795308359720": {
+      "user_id": "1427299411049840640",
+      "member_count": 7,
+      "server_name": "wjdehwuhdw"
+    },
+    "1454683779829465237": {
+      "user_id": "1450613343273615513",
+      "member_count": 6,
+      "server_name": "Xeta Department of Interior"
+    },
+    "1509638125436276917": {
+      "user_id": "1450613343273615513",
+      "member_count": 2,
+      "server_name": "EZ DONUT"
+    },
+    "1454344757424947326": {
+      "user_id": "1450613343273615513",
+      "member_count": 4,
+      "server_name": "Xeta Olympic Games Council"
+    },
+    "1441914496586219652": {
+      "user_id": "1055574652413550632",
+      "member_count": 10,
+      "server_name": "Brainrot hub"
+    },
+    "1509909887486791892": {
+      "user_id": "1055574652413550632",
+      "member_count": 4,
+      "server_name": "Night"
+    },
+    "1452201991035158558": {
+      "user_id": "1450613343273615513",
+      "member_count": 3,
+      "server_name": "Therealcoolguy's Server"
+    },
+    "1510254117140959242": {
+      "user_id": "1105561097752301608",
+      "member_count": 4,
+      "server_name": "! AAA\u1d0f\u0274\u029f\u028f\u1d0d\u1d0f\u1d00\u026a's server"
+    },
+    "1510257409178992790": {
+      "user_id": "1427299411049840640",
+      "member_count": 3,
+      "server_name": "\ud835\udd83\ud835\udd8a\ud835\udd93\ud835\udd94\ud835\udd98\ud835\udd99\ud835\udd94\ud835\udd95\ud835\udd8e\ud835\udd88's server"
+    },
+    "1491438552888643615": {
+      "user_id": "1427299411049840640",
+      "member_count": 9,
+      "server_name": "Varin SMP"
+    }
+  }
+}
